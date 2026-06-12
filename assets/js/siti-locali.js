@@ -50,7 +50,10 @@
     root.style.setProperty("--nav-link-active-color", mixColor([255, 255, 255], [0, 140, 149], progress));
     root.style.setProperty("--menu-line-color", mixColor([255, 255, 255], [0, 140, 149], progress));
     root.style.setProperty("--nav-cta-bg", mixColor([255, 255, 255], [0, 140, 149], progress).replace("rgb", "rgba").replace(")", ", " + (0.14 + 0.86 * progress).toFixed(3) + ")"));
+    root.style.setProperty("--nav-cta-hover-bg", mixColor([255, 255, 255], [0, 112, 120], progress).replace("rgb", "rgba").replace(")", ", " + (0.24 + 0.76 * progress).toFixed(3) + ")"));
     root.style.setProperty("--nav-cta-border", "rgba(255, 255, 255, " + (0.44 * (1 - progress)).toFixed(3) + ")");
+    root.style.setProperty("--nav-cta-hover-border", "rgba(255, 255, 255, " + (0.62 * (1 - progress)).toFixed(3) + ")");
+    root.style.setProperty("--nav-cta-shadow-color", "rgba(0, 140, 149, " + (0.12 + 0.12 * progress).toFixed(3) + ")");
   };
 
   if (brandTopLink) {
@@ -102,7 +105,7 @@
 
     var getCurrentLink = function () {
       var checkpoint = window.innerHeight * 0.32;
-      var currentId = sections[0] ? sections[0].id : "";
+      var currentId = "";
 
       sections.forEach(function (section) {
         if (section.getBoundingClientRect().top <= checkpoint) {
