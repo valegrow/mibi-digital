@@ -407,9 +407,11 @@
           </address>
         </div>
 
-        <form class="contact-form" action="#" method="post">
-          <!-- TODO: collegare action e access key a Web3Forms o Formspree prima della pubblicazione. -->
-          <!-- Form collegato a servizio esterno compatibile con sito statico (Web3Forms / Formspree). Nessun backend necessario. -->
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="01fb163b-0ac2-4b77-aae0-7cc3e7b38410">
+          <input type="hidden" name="subject" value="Nuova richiesta dal sito MIBI Digital">
+          <input type="hidden" name="from_name" value="MIBI Digital">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" hidden>
           <div class="form-row">
             <label for="nome">Nome e cognome</label>
             <input id="nome" name="nome" type="text" autocomplete="name" required>
